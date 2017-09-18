@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
                             print(error)
                         } else {
                             if let user = user {
-                            Database.database().reference().child("users").child(user.uid).child("email").setValue(email)
+                                Database.database().reference().child("users").child(user.uid).child("email").setValue(email)
                                 self.performSegue(withIdentifier: "authToProfile", sender: nil)
                             }
                         }

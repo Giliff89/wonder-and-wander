@@ -55,13 +55,13 @@
                                 <rect key="frame" x="20" y="322" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2x-AB-wdB">
                                 <rect key="frame" x="20" y="392" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&amp;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEq-SJ-h4H">
                                 <rect key="frame" x="174" y="110" width="27.5" height="48"/>
@@ -116,11 +116,143 @@
                         <outlet property="emailTextField" destination="ezI-Lu-LqI" id="B5a-9k-XyF"/>
                         <outlet property="passwordTextField" destination="h2x-AB-wdB" id="iaE-Vi-Sz9"/>
                         <outlet property="topButton" destination="yh3-xQ-AQj" id="Zdx-IV-nlg"/>
+                        <segue destination="3X5-bY-Rhh" kind="presentation" identifier="authToProfile" id="EHh-YE-lH3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="g4K-4Y-fUZ">
+            <objects>
+                <viewController id="3X5-bY-Rhh" customClass="ProfileViewController" customModule="Wonder_and_Wander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tm2-Qr-an1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWK-81-wig">
+                                <rect key="frame" x="89" y="41" width="197" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bt-zh-Jdv">
+                                <rect key="frame" x="83" y="149" width="209" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="View your Trips"/>
+                                <connections>
+                                    <action selector="viewTripsTapped:" destination="3X5-bY-Rhh" eventType="touchUpInside" id="fU6-Qe-2di"/>
+                                    <segue destination="AgM-hN-KIu" kind="show" id="cm5-cP-4KD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faK-n8-OKY">
+                                <rect key="frame" x="114" y="257" width="146" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Add a Trip"/>
+                                <connections>
+                                    <action selector="addTripTapped:" destination="3X5-bY-Rhh" eventType="touchUpInside" id="E4j-ea-IdL"/>
+                                    <segue destination="99e-fx-cP1" kind="show" id="WeA-oi-hsG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH8-Wf-qMk">
+                                <rect key="frame" x="150" y="543" width="75" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutTapped:" destination="3X5-bY-Rhh" eventType="touchUpInside" id="csJ-wa-95R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="faK-n8-OKY" firstAttribute="top" secondItem="7bt-zh-Jdv" secondAttribute="bottom" constant="60" id="SUG-QV-Wfg"/>
+                            <constraint firstItem="RWK-81-wig" firstAttribute="centerX" secondItem="tm2-Qr-an1" secondAttribute="centerX" id="Uze-5R-aX4"/>
+                            <constraint firstItem="7bt-zh-Jdv" firstAttribute="top" secondItem="RWK-81-wig" secondAttribute="bottom" constant="60" id="yqp-lG-4N5"/>
+                            <constraint firstItem="RWK-81-wig" firstAttribute="top" secondItem="Z3k-lQ-tT2" secondAttribute="top" constant="21" id="zLJ-3u-ahY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z3k-lQ-tT2"/>
+                    </view>
+                    <connections>
+                        <outlet property="usernameLabel" destination="RWK-81-wig" id="DyL-S5-rgL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TtB-Nj-pXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.79999999999995" y="35.532233883058474"/>
+        </scene>
+        <!--Your Trips-->
+        <scene sceneID="vS1-YB-2wE">
+            <objects>
+                <tableViewController id="3po-gV-SXz" customClass="UserTripsTableViewController" customModule="Wonder_and_Wander" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="y6f-ye-8TB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yq7-EH-xUp">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yq7-EH-xUp" id="iZ2-Lb-IVc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="3po-gV-SXz" id="H9Q-W4-cLU"/>
+                            <outlet property="delegate" destination="3po-gV-SXz" id="Mfc-af-GzC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Your Trips" id="uMu-ud-vpd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pF-Rt-bmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2406" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xQu-9b-0lA">
+            <objects>
+                <navigationController id="AgM-hN-KIu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="efW-Cj-lhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="3po-gV-SXz" kind="relationship" relationship="rootViewController" id="Ub4-Q9-ke7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srB-AJ-i8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="36"/>
+        </scene>
+        <!--Add Trip View Controller-->
+        <scene sceneID="JTj-hu-BpT">
+            <objects>
+                <viewController id="99e-fx-cP1" customClass="AddTripViewController" customModule="Wonder_and_Wander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KJx-4D-9Wk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-fY-JCa">
+                                <rect key="frame" x="83" y="50" width="208.5" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5Um-fY-JCa" firstAttribute="centerX" secondItem="KJx-4D-9Wk" secondAttribute="centerX" id="DPU-Lj-39U"/>
+                            <constraint firstItem="5Um-fY-JCa" firstAttribute="top" secondItem="HZs-UP-FoV" secondAttribute="top" constant="30" id="rI9-Pe-eft"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HZs-UP-FoV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-Gc-EHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832.79999999999995" y="744.3778110944528"/>
         </scene>
     </scenes>
 </document>
