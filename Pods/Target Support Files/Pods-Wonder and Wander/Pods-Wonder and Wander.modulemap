@@ -1,0 +1,6 @@
+framework module Pods_Wonder_and_Wander {
+  umbrella header "Pods-Wonder and Wander-umbrella.h"
+
+  export *
+  module * { export * }
+}

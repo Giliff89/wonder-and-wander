@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		333595DB1F70547A0054184C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595DA1F70547A0054184C /* AppDelegate.swift */; };
-		333595DD1F70547A0054184C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595DC1F70547A0054184C /* ViewController.swift */; };
+		333595DD1F70547A0054184C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595DC1F70547A0054184C /* HomeViewController.swift */; };
 		333595E01F70547A0054184C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333595DE1F70547A0054184C /* Main.storyboard */; };
 		333595E21F70547A0054184C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333595E11F70547A0054184C /* Assets.xcassets */; };
 		333595E51F70547A0054184C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333595E31F70547A0054184C /* LaunchScreen.storyboard */; };
+		333595ED1F7063930054184C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 333595EC1F70635A0054184C /* GoogleService-Info.plist */; };
+		904D5A4C13008A4FED7B05C3 /* Pods_Wonder_and_Wander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA394023DD72C3CF81188F88 /* Pods_Wonder_and_Wander.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		333595D71F70547A0054184C /* Wonder and Wander.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wonder and Wander.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		333595DA1F70547A0054184C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		333595DC1F70547A0054184C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		333595DC1F70547A0054184C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		333595DF1F70547A0054184C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		333595E11F70547A0054184C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		333595E41F70547A0054184C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		333595E61F70547A0054184C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		333595EC1F70635A0054184C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33FC345FEEB8ED4957FE8345 /* Pods-Wonder and Wander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wonder and Wander.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wonder and Wander/Pods-Wonder and Wander.debug.xcconfig"; sourceTree = "<group>"; };
+		6FC3B1CB1A98584D1AACE2E7 /* Pods-Wonder and Wander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wonder and Wander.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wonder and Wander/Pods-Wonder and Wander.release.xcconfig"; sourceTree = "<group>"; };
+		EA394023DD72C3CF81188F88 /* Pods_Wonder_and_Wander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wonder_and_Wander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				904D5A4C13008A4FED7B05C3 /* Pods_Wonder_and_Wander.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,8 @@
 			children = (
 				333595D91F70547A0054184C /* Wonder and Wander */,
 				333595D81F70547A0054184C /* Products */,
+				8C86B2F5687043EC53747A90 /* Pods */,
+				820DEB3E39B466B01CAE2DAD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +64,31 @@
 			isa = PBXGroup;
 			children = (
 				333595DA1F70547A0054184C /* AppDelegate.swift */,
-				333595DC1F70547A0054184C /* ViewController.swift */,
+				333595DC1F70547A0054184C /* HomeViewController.swift */,
 				333595DE1F70547A0054184C /* Main.storyboard */,
+				333595EC1F70635A0054184C /* GoogleService-Info.plist */,
 				333595E11F70547A0054184C /* Assets.xcassets */,
 				333595E31F70547A0054184C /* LaunchScreen.storyboard */,
 				333595E61F70547A0054184C /* Info.plist */,
 			);
 			path = "Wonder and Wander";
+			sourceTree = "<group>";
+		};
+		820DEB3E39B466B01CAE2DAD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA394023DD72C3CF81188F88 /* Pods_Wonder_and_Wander.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8C86B2F5687043EC53747A90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33FC345FEEB8ED4957FE8345 /* Pods-Wonder and Wander.debug.xcconfig */,
+				6FC3B1CB1A98584D1AACE2E7 /* Pods-Wonder and Wander.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 333595E91F70547A0054184C /* Build configuration list for PBXNativeTarget "Wonder and Wander" */;
 			buildPhases = (
+				6DF006A901FF00823AE3D22E /* [CP] Check Pods Manifest.lock */,
 				333595D31F70547A0054184C /* Sources */,
 				333595D41F70547A0054184C /* Frameworks */,
 				333595D51F70547A0054184C /* Resources */,
+				9BCB981CCE7E8F36A19AC306 /* [CP] Embed Pods Frameworks */,
+				D37673F91E3764512BF5191F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				333595E51F70547A0054184C /* LaunchScreen.storyboard in Resources */,
+				333595ED1F7063930054184C /* GoogleService-Info.plist in Resources */,
 				333595E21F70547A0054184C /* Assets.xcassets in Resources */,
 				333595E01F70547A0054184C /* Main.storyboard in Resources */,
 			);
@@ -130,12 +161,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6DF006A901FF00823AE3D22E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9BCB981CCE7E8F36A19AC306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wonder and Wander/Pods-Wonder and Wander-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D37673F91E3764512BF5191F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wonder and Wander/Pods-Wonder and Wander-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		333595D31F70547A0054184C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				333595DD1F70547A0054184C /* ViewController.swift in Sources */,
+				333595DD1F70547A0054184C /* HomeViewController.swift in Sources */,
 				333595DB1F70547A0054184C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +350,7 @@
 		};
 		333595EA1F70547A0054184C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33FC345FEEB8ED4957FE8345 /* Pods-Wonder and Wander.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CL59C3LYC3;
@@ -285,6 +365,7 @@
 		};
 		333595EB1F70547A0054184C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FC3B1CB1A98584D1AACE2E7 /* Pods-Wonder and Wander.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CL59C3LYC3;
