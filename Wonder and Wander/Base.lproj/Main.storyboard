@@ -205,7 +205,13 @@
                             <outlet property="delegate" destination="3po-gV-SXz" id="Mfc-af-GzC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Your Trips" id="uMu-ud-vpd"/>
+                    <navigationItem key="navigationItem" title="Your Trips" id="uMu-ud-vpd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aT2-Fo-hlE">
+                            <connections>
+                                <segue destination="99e-fx-cP1" kind="show" id="88D-qY-6np"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pF-Rt-bmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,7 +242,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-fY-JCa">
-                                <rect key="frame" x="83" y="50" width="208.5" height="41"/>
+                                <rect key="frame" x="83" y="94" width="208.5" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -252,7 +258,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-Gc-EHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.79999999999995" y="744.3778110944528"/>
+            <point key="canvasLocation" x="833" y="798"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="88D-qY-6np"/>
+    </inferredMetricsTieBreakers>
 </document>
