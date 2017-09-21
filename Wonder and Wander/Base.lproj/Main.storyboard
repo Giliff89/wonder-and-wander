@@ -195,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yq7-EH-xUp" id="iZ2-Lb-IVc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -206,6 +206,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Trips" id="uMu-ud-vpd">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Lje-k3-unE"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aT2-Fo-hlE">
                             <connections>
                                 <segue destination="99e-fx-cP1" kind="show" id="88D-qY-6np"/>
@@ -216,6 +217,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pF-Rt-bmr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2406" y="36"/>
+        </scene>
+        <!--Trip View Controller-->
+        <scene sceneID="cHV-3s-jRw">
+            <objects>
+                <viewController id="0D9-Wa-hXv" customClass="TripViewController" customModule="Wonder_and_Wander" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="af4-ci-hWy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-eE-fE9">
+                                <rect key="frame" x="20" y="52" width="335" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p97-0n-J0o">
+                                <rect key="frame" x="0.0" y="364" width="375" height="303"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UQk-X1-2sx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Trip Details" id="Ges-dt-A4M"/>
+                                </items>
+                            </navigationBar>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GVn-Du-2uz">
+                                <rect key="frame" x="0.0" y="89" width="375" height="276"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GVn-Du-2uz" firstAttribute="top" secondItem="njn-eE-fE9" secondAttribute="bottom" constant="8" id="0zb-uJ-PQs"/>
+                            <constraint firstItem="njn-eE-fE9" firstAttribute="centerX" secondItem="af4-ci-hWy" secondAttribute="centerX" id="B8s-94-QQE"/>
+                            <constraint firstItem="GVn-Du-2uz" firstAttribute="trailing" secondItem="mg4-aU-4wm" secondAttribute="trailing" id="Cdg-VY-3Ul"/>
+                            <constraint firstItem="GVn-Du-2uz" firstAttribute="centerX" secondItem="af4-ci-hWy" secondAttribute="centerX" id="Fho-NT-Qcv"/>
+                            <constraint firstItem="GVn-Du-2uz" firstAttribute="top" secondItem="mg4-aU-4wm" secondAttribute="top" constant="69" id="Heh-4n-YQL"/>
+                            <constraint firstItem="p97-0n-J0o" firstAttribute="leading" secondItem="mg4-aU-4wm" secondAttribute="leading" id="NSr-Cp-PLf"/>
+                            <constraint firstItem="GVn-Du-2uz" firstAttribute="leading" secondItem="mg4-aU-4wm" secondAttribute="leading" id="Nl6-SA-8yC"/>
+                            <constraint firstItem="njn-eE-fE9" firstAttribute="top" secondItem="UQk-X1-2sx" secondAttribute="bottom" constant="8" id="O9I-de-ILW"/>
+                            <constraint firstItem="p97-0n-J0o" firstAttribute="trailing" secondItem="mg4-aU-4wm" secondAttribute="trailing" id="Rv3-s8-Nq9"/>
+                            <constraint firstItem="GVn-Du-2uz" firstAttribute="top" secondItem="njn-eE-fE9" secondAttribute="bottom" constant="8" id="XHt-VI-WKU"/>
+                            <constraint firstItem="p97-0n-J0o" firstAttribute="top" secondItem="mg4-aU-4wm" secondAttribute="top" constant="344" id="ZTa-eN-Lxt"/>
+                            <constraint firstItem="mg4-aU-4wm" firstAttribute="trailing" secondItem="njn-eE-fE9" secondAttribute="trailing" constant="20" id="hnf-cG-31K"/>
+                            <constraint firstItem="njn-eE-fE9" firstAttribute="leading" secondItem="mg4-aU-4wm" secondAttribute="leading" constant="20" id="oL9-RF-dae"/>
+                            <constraint firstItem="p97-0n-J0o" firstAttribute="bottom" secondItem="mg4-aU-4wm" secondAttribute="bottom" id="vQe-EZ-w7D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mg4-aU-4wm"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="GVn-Du-2uz" id="weB-3h-3eR"/>
+                        <outlet property="tripDetailTableView" destination="p97-0n-J0o" id="0Wv-Rz-sKh"/>
+                        <outlet property="tripNameLabel" destination="njn-eE-fE9" id="FVd-AM-YCK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R22-cp-dvJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3848.8000000000002" y="35.532233883058474"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xQu-9b-0lA">
@@ -242,19 +300,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Um-fY-JCa">
-                                <rect key="frame" x="83" y="94" width="208.5" height="41"/>
+                                <rect key="frame" x="83" y="50" width="208.5" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip location (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oO7-dq-MOk">
+                                <rect key="frame" x="20" y="145" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-jr-7f2">
+                                <rect key="frame" x="20" y="111" width="335" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jQ-rx-fvE">
+                                <rect key="frame" x="110" y="456" width="155" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create Trip!"/>
+                                <connections>
+                                    <action selector="createTripTapped:" destination="99e-fx-cP1" eventType="touchUpInside" id="pge-2M-GTt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vxd-jr-7f2" firstAttribute="leading" secondItem="HZs-UP-FoV" secondAttribute="leading" constant="20" id="0J5-ue-lrx"/>
+                            <constraint firstItem="HZs-UP-FoV" firstAttribute="trailing" secondItem="vxd-jr-7f2" secondAttribute="trailing" constant="20" id="4aA-bj-Ndf"/>
+                            <constraint firstItem="HZs-UP-FoV" firstAttribute="bottom" secondItem="3jQ-rx-fvE" secondAttribute="bottom" constant="175" id="CgD-HS-BPv"/>
+                            <constraint firstItem="3jQ-rx-fvE" firstAttribute="centerX" secondItem="KJx-4D-9Wk" secondAttribute="centerX" id="DBz-VA-Mi8"/>
                             <constraint firstItem="5Um-fY-JCa" firstAttribute="centerX" secondItem="KJx-4D-9Wk" secondAttribute="centerX" id="DPU-Lj-39U"/>
+                            <constraint firstItem="vxd-jr-7f2" firstAttribute="top" secondItem="5Um-fY-JCa" secondAttribute="bottom" constant="20" id="IZp-4R-rEu"/>
+                            <constraint firstItem="3jQ-rx-fvE" firstAttribute="leading" secondItem="HZs-UP-FoV" secondAttribute="leading" constant="110" id="JXL-qS-jrk"/>
+                            <constraint firstItem="HZs-UP-FoV" firstAttribute="trailing" secondItem="oO7-dq-MOk" secondAttribute="trailing" constant="20" id="PWK-qN-V0J"/>
+                            <constraint firstItem="HZs-UP-FoV" firstAttribute="trailing" secondItem="3jQ-rx-fvE" secondAttribute="trailing" constant="110" id="Rh2-rw-tUi"/>
+                            <constraint firstItem="oO7-dq-MOk" firstAttribute="top" secondItem="vxd-jr-7f2" secondAttribute="bottom" constant="10" id="eaF-xG-mu2"/>
+                            <constraint firstItem="oO7-dq-MOk" firstAttribute="leading" secondItem="HZs-UP-FoV" secondAttribute="leading" constant="20" id="h9f-3P-aKe"/>
                             <constraint firstItem="5Um-fY-JCa" firstAttribute="top" secondItem="HZs-UP-FoV" secondAttribute="top" constant="30" id="rI9-Pe-eft"/>
+                            <constraint firstItem="oO7-dq-MOk" firstAttribute="top" secondItem="vxd-jr-7f2" secondAttribute="bottom" constant="10" id="ycL-d5-Aum"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HZs-UP-FoV"/>
                     </view>
+                    <connections>
+                        <outlet property="tripLocationTextField" destination="oO7-dq-MOk" id="hT6-Vs-VhY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-Gc-EHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -262,6 +354,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="88D-qY-6np"/>
+        <segue reference="WeA-oi-hsG"/>
     </inferredMetricsTieBreakers>
 </document>

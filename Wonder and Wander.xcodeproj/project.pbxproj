@@ -16,6 +16,7 @@
 		333595EF1F70850C0054184C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595EE1F70850C0054184C /* ProfileViewController.swift */; };
 		333595F11F7087300054184C /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595F01F7087300054184C /* AddTripViewController.swift */; };
 		333595F31F7088350054184C /* UserTripsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595F21F7088350054184C /* UserTripsTableViewController.swift */; };
+		333595F51F731F0F0054184C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333595F41F731F0F0054184C /* TripViewController.swift */; };
 		904D5A4C13008A4FED7B05C3 /* Pods_Wonder_and_Wander.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA394023DD72C3CF81188F88 /* Pods_Wonder_and_Wander.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		333595EE1F70850C0054184C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		333595F01F7087300054184C /* AddTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		333595F21F7088350054184C /* UserTripsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTripsTableViewController.swift; sourceTree = "<group>"; };
+		333595F41F731F0F0054184C /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		33FC345FEEB8ED4957FE8345 /* Pods-Wonder and Wander.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wonder and Wander.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wonder and Wander/Pods-Wonder and Wander.debug.xcconfig"; sourceTree = "<group>"; };
 		6FC3B1CB1A98584D1AACE2E7 /* Pods-Wonder and Wander.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wonder and Wander.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wonder and Wander/Pods-Wonder and Wander.release.xcconfig"; sourceTree = "<group>"; };
 		EA394023DD72C3CF81188F88 /* Pods_Wonder_and_Wander.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wonder_and_Wander.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				333595EE1F70850C0054184C /* ProfileViewController.swift */,
 				333595F01F7087300054184C /* AddTripViewController.swift */,
 				333595F21F7088350054184C /* UserTripsTableViewController.swift */,
+				333595F41F731F0F0054184C /* TripViewController.swift */,
 				333595DE1F70547A0054184C /* Main.storyboard */,
 				333595EC1F70635A0054184C /* GoogleService-Info.plist */,
 				333595E11F70547A0054184C /* Assets.xcassets */,
@@ -226,6 +229,7 @@
 				333595EF1F70850C0054184C /* ProfileViewController.swift in Sources */,
 				333595F31F7088350054184C /* UserTripsTableViewController.swift in Sources */,
 				333595F11F7087300054184C /* AddTripViewController.swift in Sources */,
+				333595F51F731F0F0054184C /* TripViewController.swift in Sources */,
 				333595DD1F70547A0054184C /* HomeViewController.swift in Sources */,
 				333595DB1F70547A0054184C /* AppDelegate.swift in Sources */,
 			);
