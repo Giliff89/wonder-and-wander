@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -362,12 +363,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="K0D-f2-ZZp"/>
                     </view>
+                    <connections>
+                        <outlet property="tripNoteCategoryLabel" destination="0lg-s3-Tbi" id="jVL-v6-wcf"/>
+                        <outlet property="tripNoteContactInfoLabel" destination="mMw-dF-0Xj" id="2e5-Eb-XHV"/>
+                        <outlet property="tripNoteDateLabel" destination="p3S-aG-HFf" id="2QT-qa-KHx"/>
+                        <outlet property="tripNoteEndTimeLabel" destination="oy4-6S-VtU" id="wUg-kh-FJJ"/>
+                        <outlet property="tripNoteImageLabel" destination="Kb5-lk-0BR" id="jeP-sU-Tou"/>
+                        <outlet property="tripNoteLinkLabel" destination="RAA-eE-3SG" id="x1T-Lb-Tsd"/>
+                        <outlet property="tripNoteLocationLabel" destination="Y8v-k3-aWb" id="ObR-lO-F3l"/>
+                        <outlet property="tripNoteNameLabel" destination="UFu-5A-tnK" id="JXF-O8-kGX"/>
+                        <outlet property="tripNoteStartTimeLabel" destination="JXI-gc-iDJ" id="Rgb-rI-0ZO"/>
+                        <outlet property="tripSymbolLabel" destination="uFg-a7-eKR" id="Z4n-HF-yes"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdH-nz-21z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3245.5999999999999" y="779.46026986506752"/>
         </scene>
-        <!--New Trip Note View Controller-->
+        <!--New Trip Note-->
         <scene sceneID="7Ah-H1-T7Z">
             <objects>
                 <viewController id="rvV-w3-5n7" customClass="NewTripNoteViewController" customModule="Wonder_and_Wander" customModuleProvider="target" sceneMemberID="viewController">
@@ -375,30 +388,95 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add a Trip Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jr-1T-LYV">
-                                <rect key="frame" x="112" y="80" width="151" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Trip Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jr-1T-LYV">
+                                <rect key="frame" x="110" y="79" width="155" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SX-yP-D2m">
-                                <rect key="frame" x="138" y="600" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SX-yP-D2m">
+                                <rect key="frame" x="140.5" y="591" width="94" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Add to Trip"/>
+                                <connections>
+                                    <action selector="addToTripTapped:" destination="rvV-w3-5n7" eventType="touchUpInside" id="7Ua-0i-51u"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30n-MM-fth">
-                                <rect key="frame" x="44" y="133" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30n-MM-fth">
+                                <rect key="frame" x="20" y="135.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address/Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VhI-Xi-9ng">
+                                <rect key="frame" x="20" y="190.5" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Info" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-xk-Z18">
+                                <rect key="frame" x="20" y="245.5" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DeG-t9-jyq">
+                                <rect key="frame" x="20" y="300.5" width="335" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="60U-DG-Kel">
+                                <rect key="frame" x="0.0" y="392" width="375" height="149"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lLd-vM-cPQ" firstAttribute="trailing" secondItem="v0w-xk-Z18" secondAttribute="trailing" constant="20" id="2mK-zq-0pW"/>
+                            <constraint firstItem="lLd-vM-cPQ" firstAttribute="trailing" secondItem="DeG-t9-jyq" secondAttribute="trailing" constant="20" id="B9A-Jk-pJb"/>
+                            <constraint firstItem="v0w-xk-Z18" firstAttribute="top" secondItem="VhI-Xi-9ng" secondAttribute="bottom" constant="25" id="C5j-Yr-zxQ"/>
+                            <constraint firstItem="DeG-t9-jyq" firstAttribute="leading" secondItem="lLd-vM-cPQ" secondAttribute="leading" constant="20" id="D4t-Wi-32a"/>
+                            <constraint firstItem="6jr-1T-LYV" firstAttribute="leading" secondItem="lLd-vM-cPQ" secondAttribute="leading" constant="110" id="GPs-i3-6bu"/>
+                            <constraint firstItem="VhI-Xi-9ng" firstAttribute="centerX" secondItem="Oo2-c6-9bB" secondAttribute="centerX" id="PXI-IY-FRO"/>
+                            <constraint firstItem="lLd-vM-cPQ" firstAttribute="bottom" secondItem="4SX-yP-D2m" secondAttribute="bottom" constant="40" id="T7u-ha-uiT"/>
+                            <constraint firstItem="4SX-yP-D2m" firstAttribute="centerX" secondItem="Oo2-c6-9bB" secondAttribute="centerX" id="Up7-ku-ekO"/>
+                            <constraint firstItem="lLd-vM-cPQ" firstAttribute="trailing" secondItem="30n-MM-fth" secondAttribute="trailing" constant="20" id="YPF-l3-uSr"/>
+                            <constraint firstItem="30n-MM-fth" firstAttribute="centerX" secondItem="Oo2-c6-9bB" secondAttribute="centerX" id="a0g-m2-qtz"/>
+                            <constraint firstItem="DeG-t9-jyq" firstAttribute="centerX" secondItem="Oo2-c6-9bB" secondAttribute="centerX" id="bHM-6W-69W"/>
+                            <constraint firstItem="DeG-t9-jyq" firstAttribute="top" secondItem="v0w-xk-Z18" secondAttribute="bottom" constant="25" id="cO2-RE-m79"/>
+                            <constraint firstItem="lLd-vM-cPQ" firstAttribute="trailing" secondItem="6jr-1T-LYV" secondAttribute="trailing" constant="110" id="ctS-mu-749"/>
+                            <constraint firstItem="v0w-xk-Z18" firstAttribute="leading" secondItem="lLd-vM-cPQ" secondAttribute="leading" constant="20" id="d5K-4J-fic"/>
+                            <constraint firstItem="30n-MM-fth" firstAttribute="leading" secondItem="lLd-vM-cPQ" secondAttribute="leading" constant="20" id="nSZ-Vy-JeU"/>
+                            <constraint firstItem="VhI-Xi-9ng" firstAttribute="leading" secondItem="lLd-vM-cPQ" secondAttribute="leading" constant="20" id="tSO-lB-XMc"/>
+                            <constraint firstItem="6jr-1T-LYV" firstAttribute="top" secondItem="lLd-vM-cPQ" secondAttribute="top" constant="15" id="tda-jC-kIz"/>
+                            <constraint firstItem="lLd-vM-cPQ" firstAttribute="trailing" secondItem="VhI-Xi-9ng" secondAttribute="trailing" constant="20" id="uLp-uD-FbJ"/>
+                            <constraint firstItem="v0w-xk-Z18" firstAttribute="centerX" secondItem="Oo2-c6-9bB" secondAttribute="centerX" id="udq-sM-mPJ"/>
+                            <constraint firstItem="VhI-Xi-9ng" firstAttribute="top" secondItem="30n-MM-fth" secondAttribute="bottom" constant="25" id="veF-Xq-UgH"/>
+                            <constraint firstItem="30n-MM-fth" firstAttribute="top" secondItem="6jr-1T-LYV" secondAttribute="bottom" constant="30" id="vlz-i9-Wqh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lLd-vM-cPQ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="New Trip Note" id="88X-od-lVu">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="60E-5u-50K">
+                                <connections>
+                                    <action selector="cameraTapped:" destination="rvV-w3-5n7" id="vbQ-sL-tZC"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="l8w-3K-NPt">
+                                <connections>
+                                    <action selector="photoAlbumTapped:" destination="rvV-w3-5n7" id="nO9-Ca-uzd"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tripNoteContactInfoTextField" destination="v0w-xk-Z18" id="TAI-rB-GMQ"/>
+                        <outlet property="tripNoteLinkTextField" destination="DeG-t9-jyq" id="cOH-w6-UTK"/>
+                        <outlet property="tripNoteLocationTextField" destination="VhI-Xi-9ng" id="Aci-Ou-mDc"/>
+                        <outlet property="tripNoteNameTextField" destination="30n-MM-fth" id="dFu-4i-BH0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2x-sM-N1V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,32 +512,56 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip location (required)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oO7-dq-MOk">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Trip name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oO7-dq-MOk">
                                 <rect key="frame" x="20" y="189" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-jr-7f2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-jr-7f2">
                                 <rect key="frame" x="20" y="155" width="335" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jQ-rx-fvE">
-                                <rect key="frame" x="110" y="456" width="155" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jQ-rx-fvE">
+                                <rect key="frame" x="110" y="582" width="155" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Create Trip!"/>
                                 <connections>
                                     <action selector="createTripTapped:" destination="99e-fx-cP1" eventType="touchUpInside" id="pge-2M-GTt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommended name note: Use a city, state, country, or any other identifier you prefer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SC-l7-ejs">
+                                <rect key="frame" x="48" y="236" width="278" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip Symbol" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ag9-Tl-bKI">
+                                <rect key="frame" x="121" y="327" width="133" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hon-8p-rTJ">
+                                <rect key="frame" x="0.0" y="363" width="375" height="140"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your trip symbol will represent all notes displayed on the map. Do not choose a symbol used for another trip!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tu-7B-0bI">
+                                <rect key="frame" x="38" y="496" width="299" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vxd-jr-7f2" firstAttribute="leading" secondItem="HZs-UP-FoV" secondAttribute="leading" constant="20" id="0J5-ue-lrx"/>
                             <constraint firstItem="HZs-UP-FoV" firstAttribute="trailing" secondItem="vxd-jr-7f2" secondAttribute="trailing" constant="20" id="4aA-bj-Ndf"/>
-                            <constraint firstItem="HZs-UP-FoV" firstAttribute="bottom" secondItem="3jQ-rx-fvE" secondAttribute="bottom" constant="175" id="CgD-HS-BPv"/>
                             <constraint firstItem="3jQ-rx-fvE" firstAttribute="centerX" secondItem="KJx-4D-9Wk" secondAttribute="centerX" id="DBz-VA-Mi8"/>
                             <constraint firstItem="5Um-fY-JCa" firstAttribute="centerX" secondItem="KJx-4D-9Wk" secondAttribute="centerX" id="DPU-Lj-39U"/>
                             <constraint firstItem="vxd-jr-7f2" firstAttribute="top" secondItem="5Um-fY-JCa" secondAttribute="bottom" constant="20" id="IZp-4R-rEu"/>
@@ -479,7 +581,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-Gc-EHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="833" y="798"/>
+            <point key="canvasLocation" x="832.79999999999995" y="797.45127436281871"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
