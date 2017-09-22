@@ -9,10 +9,9 @@
 import UIKit
 import MapKit
 
-class TripViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITableViewDelegate {
+class TripViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tripNameLabel: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tripDetailTableView: UITableView!
     
     override func viewDidLoad() {
