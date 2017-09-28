@@ -7,17 +7,37 @@
 //
 
 import UIKit
+import FirebaseStorage
 
-class AddTripViewController: UIViewController {
+class AddTripViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    let symbols = ["🏖", "🏔", "⛩", "🕌", "🌉", "🏕", "🌋", "🏟", "🏛", "⛪️", "🛣", "🏙", "🏞", "🗾", "🌁", "🌇", "🛤", "🎡", "⚓️", "🗺", "🚢", "🏰", "🚤", "🗽", "🗼", "🗿", "⛵️", "🛶", "🛵", "🚲", "🎁", "🎉", "☃️", "❄️", "☀️", "🍷", "🍙", "☕️", "🥐", "🍔", "🍚", "🍣", "🍺", "🍻", "🥂", "🍶", "🍹", "🍾", "🥖", "🏄🏽‍♀️", "🏄🏽", "🎿", "⛷", "🎭", "🎷", "👙", "🕶", "💃🏼"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return symbols.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return symbols[row]
+    }
+    
 
-    @IBOutlet weak var tripLocationTextField: UITextField!
+    @IBOutlet weak var tripNameTextField: UITextField!
+    
+    @IBOutlet weak var tripSymbolPickerView: UIPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tripSymbolPickerView.delegate = self
+        tripSymbolPickerView.dataSource = self
     }
     
     @IBAction func createTripTapped(_ sender: Any) {
+        
     }
 }
