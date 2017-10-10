@@ -7,11 +7,45 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseStorage
+import FirebaseDatabase
 
 class AddTripViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    var user = Auth.auth().currentUser?.uid
+    
     let symbols = ["🏖", "🏔", "⛩", "🕌", "🌉", "🏕", "🌋", "🏟", "🏛", "⛪️", "🛣", "🏙", "🏞", "🗾", "🌁", "🌇", "🛤", "🎡", "⚓️", "🗺", "🚢", "🏰", "🚤", "🗽", "🗼", "🗿", "⛵️", "🛶", "🛵", "🚲", "🎁", "🎉", "☃️", "❄️", "☀️", "🍷", "🍙", "☕️", "🥐", "🍔", "🍚", "🍣", "🍺", "🍻", "🥂", "🍶", "🍹", "🍾", "🥖", "🏄🏽‍♀️", "🏄🏽", "🎿", "⛷", "🎭", "🎷", "👙", "🕶", "💃🏼"]
+    
+    var refTrips : DatabaseReference!
+    
+    @IBOutlet weak var tripNameTextField: UITextField!
+    
+    @IBOutlet weak var tripSymbolPickerView: UIPickerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        tripSymbolPickerView.delegate = self
+        tripSymbolPickerView.dataSource = self
+        
+        refTrips = Database.database().reference().child("users").child(user!).child("trips")
+    }
+    
+    func addTrip() {
+        
+        let key = refTrips.childByAutoId().key
+        
+        let selectedSymbol = symbols[tripSymbolPickerView.selectedRow(inComponent: 0)]
+        
+        let trip = [
+            "id": key,
+            "tripName": tripNameTextField.text! as String,
+            "tripSymbol": selectedSymbol as String
+        ]
+        
+        refTrips.child(key).setValue(trip)
+    }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -25,19 +59,17 @@ class AddTripViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         return symbols[row]
     }
     
-
-    @IBOutlet weak var tripNameTextField: UITextField!
+    // Hide keyboard when user touches outside text box
     
-    @IBOutlet weak var tripSymbolPickerView: UIPickerView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        tripSymbolPickerView.delegate = self
-        tripSymbolPickerView.dataSource = self
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func createTripTapped(_ sender: Any) {
+        
+        addTrip()
+        
+        self.performSegue(withIdentifier: "newTripToTripsTVC", sender: nil)
         
     }
 }

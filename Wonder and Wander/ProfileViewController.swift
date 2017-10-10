@@ -23,9 +23,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func viewTripsTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileToTrips", sender: nil)
     }
 
     @IBAction func addTripTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "profileToAddNewTrip", sender: nil)
     }
     
 }

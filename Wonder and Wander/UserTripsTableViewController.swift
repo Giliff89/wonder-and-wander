@@ -7,40 +7,49 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class UserTripsTableViewController: UITableViewController {
+    
+    var userTrips : [DataSnapshot] = []
+   // var refTrips : DatabaseReference!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+//        refTrips = Database.database().reference().child("users").child(user!).child("trips")
+        
+        if let user = Auth.auth().currentUser?.uid {
+//            refTrips = Database.database().reference().child("users").child(user!).child("trips")
+            Database.database().reference().child("users").child(user).child("trips").observe(.childAdded) { (snapshot) in
+                
+                self.userTrips.append(snapshot)
+                self.tableView.reloadData()
+            }
+        }
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return userTrips.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tripDisplayIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+        let trip = userTrips[indexPath.row]
+        
+        if let tripDictionary = trip.value as? NSDictionary {
+            if let name = tripDictionary["tripName"] as? String {
+                cell.textLabel?.text = name
+            }
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -88,3 +97,4 @@ class UserTripsTableViewController: UITableViewController {
     */
 
 }
+

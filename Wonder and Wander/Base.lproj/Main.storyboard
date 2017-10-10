@@ -79,7 +79,6 @@
                             <constraint firstItem="MT8-aY-GQZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2kt-ol-aJR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MT8-aY-GQZ" secondAttribute="trailing" constant="104.5" id="3H8-gW-sca"/>
                             <constraint firstItem="rEq-SJ-h4H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="174" id="4di-2W-1T6"/>
-                            <constraint firstItem="ezI-Lu-LqI" firstAttribute="top" secondItem="iij-Zb-sFk" secondAttribute="bottom" constant="40" id="5sI-L2-75u"/>
                             <constraint firstItem="ezI-Lu-LqI" firstAttribute="top" secondItem="iij-Zb-sFk" secondAttribute="bottom" constant="40" id="6Lh-k2-NMp"/>
                             <constraint firstItem="h2x-AB-wdB" firstAttribute="top" secondItem="ezI-Lu-LqI" secondAttribute="bottom" constant="40" id="7mf-wp-NAm"/>
                             <constraint firstItem="ScJ-oI-wQH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="BFT-t1-0DF"/>
@@ -90,7 +89,6 @@
                             <constraint firstItem="MT8-aY-GQZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105.5" id="KxS-ca-U5p"/>
                             <constraint firstItem="Bsm-Lf-4RG" firstAttribute="top" secondItem="yh3-xQ-AQj" secondAttribute="bottom" constant="40" id="L0z-9r-Ak1"/>
                             <constraint firstItem="Bsm-Lf-4RG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lbu-0J-3B5"/>
-                            <constraint firstItem="h2x-AB-wdB" firstAttribute="top" secondItem="ezI-Lu-LqI" secondAttribute="bottom" constant="40" id="Of2-a6-hUb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ezI-Lu-LqI" secondAttribute="trailing" constant="20" id="Pd4-ks-R1s"/>
                             <constraint firstItem="yh3-xQ-AQj" firstAttribute="top" secondItem="h2x-AB-wdB" secondAttribute="bottom" constant="25" id="Rgw-ZJ-R4l"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Bsm-Lf-4RG" secondAttribute="bottom" constant="96" id="RpM-sr-gdQ"/>
@@ -99,12 +97,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h2x-AB-wdB" secondAttribute="trailing" constant="20" id="VAX-cQ-tSd"/>
                             <constraint firstItem="ScJ-oI-wQH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="XBk-VU-wtp"/>
                             <constraint firstItem="h2x-AB-wdB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="d4P-5E-3oq"/>
-                            <constraint firstItem="yh3-xQ-AQj" firstAttribute="top" secondItem="h2x-AB-wdB" secondAttribute="bottom" constant="25" id="dmk-qE-rAW"/>
                             <constraint firstItem="ScJ-oI-wQH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e6o-tf-Mcc"/>
                             <constraint firstItem="rEq-SJ-h4H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="j0i-hG-o5b"/>
-                            <constraint firstItem="Bsm-Lf-4RG" firstAttribute="top" secondItem="yh3-xQ-AQj" secondAttribute="bottom" constant="40" id="kfu-Je-Wbs"/>
                             <constraint firstItem="iij-Zb-sFk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lA7-Wy-Kgv"/>
-                            <constraint firstItem="iij-Zb-sFk" firstAttribute="top" secondItem="MT8-aY-GQZ" secondAttribute="bottom" constant="30" id="pd9-cQ-mQY"/>
                             <constraint firstItem="yh3-xQ-AQj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r2B-r8-a7l"/>
                             <constraint firstItem="iij-Zb-sFk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="uOE-GN-4cj"/>
                             <constraint firstItem="h2x-AB-wdB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uhE-C2-fel"/>
@@ -144,7 +139,7 @@
                                 <state key="normal" title="View your Trips"/>
                                 <connections>
                                     <action selector="viewTripsTapped:" destination="3X5-bY-Rhh" eventType="touchUpInside" id="fU6-Qe-2di"/>
-                                    <segue destination="AgM-hN-KIu" kind="show" id="cm5-cP-4KD"/>
+                                    <segue destination="AgM-hN-KIu" kind="show" identifier="profileToTrips" id="cm5-cP-4KD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faK-n8-OKY">
@@ -153,7 +148,7 @@
                                 <state key="normal" title="Add a Trip"/>
                                 <connections>
                                     <action selector="addTripTapped:" destination="3X5-bY-Rhh" eventType="touchUpInside" id="E4j-ea-IdL"/>
-                                    <segue destination="99e-fx-cP1" kind="show" id="WeA-oi-hsG"/>
+                                    <segue destination="99e-fx-cP1" kind="show" identifier="profileToAddNewTrip" id="WeA-oi-hsG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uH8-Wf-qMk">
@@ -194,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yq7-EH-xUp">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tripDisplayIdentifier" id="yq7-EH-xUp">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yq7-EH-xUp" id="iZ2-Lb-IVc">
@@ -233,7 +228,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p97-0n-J0o">
-                                <rect key="frame" x="0.0" y="141" width="375" height="526"/>
+                                <rect key="frame" x="0.0" y="97" width="375" height="570"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Vz5-sk-6Sg">
@@ -250,7 +245,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njn-eE-fE9">
-                                <rect key="frame" x="20" y="88" width="335" height="29"/>
+                                <rect key="frame" x="20" y="44" width="335" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -391,7 +386,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Trip Note" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jr-1T-LYV">
-                                <rect key="frame" x="110" y="79" width="155" height="26.5"/>
+                                <rect key="frame" x="110" y="35" width="155" height="26.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -405,25 +400,25 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30n-MM-fth">
-                                <rect key="frame" x="20" y="135.5" width="335" height="30"/>
+                                <rect key="frame" x="20" y="91.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address/Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VhI-Xi-9ng">
-                                <rect key="frame" x="20" y="190.5" width="335" height="30"/>
+                                <rect key="frame" x="20" y="146.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contact Info" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0w-xk-Z18">
-                                <rect key="frame" x="20" y="245.5" width="335" height="30"/>
+                                <rect key="frame" x="20" y="201.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Link" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DeG-t9-jyq">
-                                <rect key="frame" x="20" y="300.5" width="335" height="30"/>
+                                <rect key="frame" x="20" y="256.5" width="335" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -564,6 +559,7 @@
                                 <state key="normal" title="Create Trip!"/>
                                 <connections>
                                     <action selector="createTripTapped:" destination="99e-fx-cP1" eventType="touchUpInside" id="pge-2M-GTt"/>
+                                    <segue destination="3po-gV-SXz" kind="presentation" identifier="newTripToTripsTVC" id="lbk-7V-ckI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -615,5 +611,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="WeA-oi-hsG"/>
+        <segue reference="lbk-7V-ckI"/>
     </inferredMetricsTieBreakers>
 </document>
