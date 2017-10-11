@@ -208,6 +208,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Trips" id="uMu-ud-vpd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Lje-k3-unE"/>
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="AIE-zg-jOV">
+                            <connections>
+                                <segue destination="3X5-bY-Rhh" kind="presentation" id="PWM-l6-1br"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aT2-Fo-hlE">
                             <connections>
                                 <segue destination="99e-fx-cP1" kind="show" id="88D-qY-6np"/>
@@ -493,6 +498,7 @@
         <!--Navigation Controller-->
         <scene sceneID="xQu-9b-0lA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="srB-AJ-i8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="AgM-hN-KIu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="efW-Cj-lhA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -502,7 +508,6 @@
                         <segue destination="3po-gV-SXz" kind="relationship" relationship="rootViewController" id="Ub4-Q9-ke7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="srB-AJ-i8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614" y="36"/>
         </scene>
@@ -559,7 +564,7 @@
                                 <state key="normal" title="Create Trip!"/>
                                 <connections>
                                     <action selector="createTripTapped:" destination="99e-fx-cP1" eventType="touchUpInside" id="pge-2M-GTt"/>
-                                    <segue destination="3po-gV-SXz" kind="presentation" identifier="newTripToTripsTVC" id="lbk-7V-ckI"/>
+                                    <segue destination="AgM-hN-KIu" kind="show" identifier="newTripToTripsTVC" id="niw-A1-A5R"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -606,11 +611,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8e-Gc-EHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.79999999999995" y="797.45127436281871"/>
+            <point key="canvasLocation" x="833" y="779"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WeA-oi-hsG"/>
-        <segue reference="lbk-7V-ckI"/>
+        <segue reference="PWM-l6-1br"/>
+        <segue reference="niw-A1-A5R"/>
+        <segue reference="88D-qY-6np"/>
     </inferredMetricsTieBreakers>
 </document>
